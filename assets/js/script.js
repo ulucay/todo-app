@@ -5,5 +5,8 @@ $("li").on("click", (e) =>{
 
 //Click on X to delete Todo
 $("span").on("click", (e)=> {
-    alert("Clicked on")
+    $(e.target).parent().fadeOut(500, () =>{
+        $(e.target).remove();  
+    });
+    e.stopPropagation();
 })
